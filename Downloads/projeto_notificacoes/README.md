@@ -10,5 +10,4 @@ Para rodar a aplicação:
 2. No diretório raiz (onde está o docker-compose.yml) rode:
    docker-compose up --build
 
-A primeira vez o frontend fará `npm install` e o build pode demorar.
 
