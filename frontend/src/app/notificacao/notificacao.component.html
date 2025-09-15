@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-title>Enviar Notificação</mat-card-title>
+  <mat-card-content>
+    <mat-form-field appearance="fill" style="width:100%">
+      <input matInput placeholder="Mensagem" [(ngModel)]="conteudoMensagem">
+    </mat-form-field>
+    <div style="text-align:right; margin-top:8px;">
+      <button mat-raised-button color="primary" (click)="enviar()">Enviar Notificação</button>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+<mat-card style="margin-top:16px;">
+  <mat-card-title>Mensagens</mat-card-title>
+  <mat-card-content>
+    <mat-list>
+      <mat-list-item *ngFor="let m of mensagens">
+        <mat-icon matListIcon>{{ m.status === 'PROCESSADO_SUCESSO' ? 'check_circle' : (m.status === 'AGUARDANDO_PROCESSAMENTO' ? 'hourglass_empty' : 'error') }}</mat-icon>
+        <div matLine>{{ m.conteudo }}</div>
+        <div matLine style="font-size:12px; color:gray;">{{ m.id }} — {{ m.status }}</div>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+</mat-card>
